@@ -1,13 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\hongs\\OneDrive\\Android Project\\Games\\Codecanyon\\AvoidSharkBasic\\public_key.jks')
+            storePassword '4Ai2s7m8iE'
+            keyAlias 'hongsonvx1'
+            keyPassword '4Ai2s7m8iE'
+        }
+
+        release {
+            storeFile file('C:\\Users\\hongs\\OneDrive\\Android Project\\Games\\Codecanyon\\AvoidSharkBasic\\public_key.jks')
+            storePassword '4Ai2s7m8iE'
+            keyAlias 'hongsonvx1'
+            keyPassword '4Ai2s7m8iE'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
-        applicationId "com.progames.shark"
+        applicationId "com.mountains.shark"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         multiDexEnabled false
 
         ndk {
@@ -15,12 +30,6 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-    }
 
     dexOptions {
         javaMaxHeapSize "4g"
@@ -30,12 +39,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    android {
-        packagingOptions {
-            exclude 'META-INF/proguard/androidx-annotations.pro'
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
         }
     }
+
+//    android {
+//        packagingOptions {
+//            exclude 'META-INF/proguard/androidx-annotations.pro'
+//        }
+//    }
 }
 
 repositories {
@@ -46,10 +63,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.google.android.gms:play-services-games:20.0.1'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'com.google.android.gms:play-services-ads:19.4.0'
+    implementation 'com.google.android.gms:play-services-ads:19.5.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    implementation project(':aob_sessionreporting')
+//    implementation project(':aob_sessionreporting')
     // More deps here //
 }
 

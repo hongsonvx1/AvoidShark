@@ -1,4 +1,4 @@
-package com.progames.shark;
+package com.mountains.shark;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
@@ -12,7 +12,7 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.apponboard.aob_sessionreporting.AOBReporting;
+//import com.apponboard.aob_sessionreporting.AOBReporting;
 import com.buildbox.AdIntegrator;
 import com.secrethq.store.PTStoreBridge;
 import com.google.android.gms.games.GamesActivityResultCodes;
@@ -64,9 +64,9 @@ public class PTPlayer extends Cocos2dxActivity {
 		super.onCreate(savedInstanceState);
 		this.hideVirtualButton();
 
-		AOBReporting.initialize(this, "2.3.9");
+//		AOBReporting.initialize(this, "2.3.9");
 
-		PTServicesBridge.initBridge(this, getString( R.string.app_id ));
+//		PTServicesBridge.initBridge(this, getString( R.string.app_id ));
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
@@ -137,7 +137,7 @@ public class PTPlayer extends Cocos2dxActivity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		AOBReporting.startOrResumeSessionReporting();
+//		AOBReporting.startOrResumeSessionReporting();
 		if (PTJniHelper.isAdNetworkActive("kChartboost")) {
 			PTAdChartboostBridge.onStart( this );
 		}
@@ -146,7 +146,7 @@ public class PTPlayer extends Cocos2dxActivity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		AOBReporting.pauseSessionReporting();
+//		AOBReporting.pauseSessionReporting();
 		if (PTJniHelper.isAdNetworkActive("kChartboost")) {
 			PTAdChartboostBridge.onStop( this );
 		}
@@ -154,7 +154,7 @@ public class PTPlayer extends Cocos2dxActivity {
 
 	@Override
 	protected void onDestroy() {
-		AOBReporting.stopSessionReporting();
+//		AOBReporting.stopSessionReporting();
 		super.onDestroy();
 	}
 

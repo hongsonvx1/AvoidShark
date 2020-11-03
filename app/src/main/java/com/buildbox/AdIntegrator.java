@@ -13,7 +13,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.progames.shark.R;
+import com.mountains.shark.R;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
