@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AvoidShark.iml" filepath="$PROJECT_DIR$/.idea/modules/AvoidShark.iml" group="AvoidShark" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="AvoidShark/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AvoidShark.iml" filepath="$PROJECT_DIR$/.idea/modules/AvoidShark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AvoidShark.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AvoidShark.app.iml" />
     </modules>
   </component>
 </project>

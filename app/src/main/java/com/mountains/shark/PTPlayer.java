@@ -66,7 +66,7 @@ public class PTPlayer extends Cocos2dxActivity {
 
 //		AOBReporting.initialize(this, "2.3.9");
 
-//		PTServicesBridge.initBridge(this, getString( R.string.app_id ));
+		PTServicesBridge.initBridge(this, getString( R.string.app_id ));
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 

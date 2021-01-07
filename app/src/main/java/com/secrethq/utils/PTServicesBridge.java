@@ -69,22 +69,22 @@ public class PTServicesBridge
 		PTServicesBridge.s_activity = new WeakReference<Cocos2dxActivity>(activity);
 		PTServicesBridge.activity = activity;
 
-		if(appId == null || appId.length() == 0 || appId.matches("[0-9]+") == false){
-			return;
-		}
-
-		SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
-		if(sharedPref.getBoolean("GooglePlayServiceSignInError", false) == true){
-			Log.v(TAG, "Skipping logging in Google Play services");
-			return;
-		}
-		
-		// Create a GoogleApiClient instance
-		PTServicesBridge.mGoogleApiClient = new GoogleApiClient.Builder(PTServicesBridge.activity)
-        		.addApi(Games.API).addScope(Games.SCOPE_GAMES)
-        		.addConnectionCallbacks(instance())
-				.addOnConnectionFailedListener(instance())
-				.build();
+//		if(appId == null || appId.length() == 0 || appId.matches("[0-9]+") == false){
+//			return;
+//		}
+//
+//		SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+//		if(sharedPref.getBoolean("GooglePlayServiceSignInError", false) == true){
+//			Log.v(TAG, "Skipping logging in Google Play services");
+//			return;
+//		}
+//
+//		// Create a GoogleApiClient instance
+//		PTServicesBridge.mGoogleApiClient = new GoogleApiClient.Builder(PTServicesBridge.activity)
+//        		.addApi(Games.API).addScope(Games.SCOPE_GAMES)
+//        		.addConnectionCallbacks(instance())
+//				.addOnConnectionFailedListener(instance())
+//				.build();
 	}
 	
 	public static void openShareWidget( final String message ){
@@ -304,15 +304,15 @@ public class PTServicesBridge
 	}
 	
 	public static boolean isRunningOnTV(){
-		UiModeManager uiModeManager = (UiModeManager)PTServicesBridge.activity.getSystemService( Context.UI_MODE_SERVICE );
+		UiModeManager uiModeManager = (UiModeManager)PTServicesBridge.activity.getSystemService(Context.UI_MODE_SERVICE );
 		if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
 			Log.d("DeviceTypeRuntimeCheck", "Running on a TV Device");
 			return true;
-		    
+
 		} else {
 			Log.d("DeviceTypeRuntimeCheck", "Running on a non-TV Device");
 			return false;
-		    
+
 		}
 	}
 

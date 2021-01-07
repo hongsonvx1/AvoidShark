@@ -45,11 +45,12 @@ public class AdIntegrator {
                 mAdView = new AdView( activity.get());
                 mAdView.setAdSize(AdSize.SMART_BANNER);
                 mAdView.setAdUnitId(getString(R.string.ad_banner_id));
-                mAdView.setVisibility(View.INVISIBLE);
+                //mAdView.setVisibility(View.INVISIBLE);
                 AdRequest adRequest = new AdRequest.Builder().build();
                 mAdView.loadAd(adRequest);
                 layout.addView(mAdView);
                 frameLayout.addView(layout);
+                Log.d("my_test", "add banner");
 
                 //interstitial
                 mInterstitialAd = new InterstitialAd(activity.get());

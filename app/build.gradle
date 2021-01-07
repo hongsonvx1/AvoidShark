@@ -27,6 +27,7 @@ android {
 
         ndk {
             moduleName "player_shared"
+            abiFilters "armeabi-v7a", "x86", "armeabi", "mips",'arm64-v8a','x86_64'
         }
     }
 
@@ -45,14 +46,16 @@ android {
         }
         release {
             signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 
-//    android {
-//        packagingOptions {
-//            exclude 'META-INF/proguard/androidx-annotations.pro'
-//        }
-//    }
+    android {
+        packagingOptions {
+            exclude 'META-INF/proguard/androidx-annotations.pro'
+        }
+    }
 }
 
 repositories {
